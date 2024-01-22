@@ -1,0 +1,23 @@
+Members=[
+    {
+        "Name":"Varshini",
+        "Age":20,
+        "Investment":100000
+    },
+    {
+        "Name":"Krishna",
+        "Age":22,
+        "Investment":200000
+    },
+    {
+        "Name":"Suresh",
+        "Age":52,
+        "Investment":500000
+    },
+    {
+        "Name":"Saroja",
+        "Age":45,
+        "Investment":400000
+    }
+]
+print(Members[3]["Age"])
