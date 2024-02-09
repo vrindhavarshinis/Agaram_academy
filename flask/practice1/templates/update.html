@@ -1,0 +1,23 @@
+<html>
+    <head>
+       <h3>Student details</h3> 
+    </head>
+    <body>
+        <form action={{request.path}} method="post">
+
+
+            <input type="text"name="name" value="{{value.name}}"/>
+            <input type="number"name="age" value="{{value.age}}"/>
+            <input type="text"name="qualification" value="{{value.qualification}}"/>
+            <input type="number"name="contactnumber" value="{{value.contactnumber}}"/>
+        
+           
+            
+
+           <input type="submit" value="update"/>
+           <input type="submit" value="delete"/>
+           <input type="checkbox" value="checked"/>
+
+        </form>
+    </body>
+</html>

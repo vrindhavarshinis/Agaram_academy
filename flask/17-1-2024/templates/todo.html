@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ol>
+            {% for i in range(itemlist|length) %}
+                <li> {{itemlist[i|int]}} <a href="/deletetodo/{{itemlist[i|int]}} ">delete</a> <a href="/updatetodo/{{i}}">update</a> </li>
+            {% endfor %}
+        </ol>
+        
+       <form action="/todo" method="POST">
+
+        
+        <input type="text" name="item_name"/>
+        <input type="submit" value="Submit"/>
+        
+       
+       </form>
+    </body>
+</html>
+
+
