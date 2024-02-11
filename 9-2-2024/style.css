@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    text-align: center;
 }
 *{margin: 0;
 }
@@ -8,13 +9,17 @@ body{
 .para{
     color:gold;
     background-color:black;
-    width: 300px;
+    width: 100px;
     border:10px double gold;
     /* margin-left: 100px;
     margin-top: 100px; */
     /* margin:50px 0 0 100px
      */
+    margin:0  auto;
     padding: 50px;
+    overflow-y: scroll;
+    height: 200px;
+    
 }
 
 
