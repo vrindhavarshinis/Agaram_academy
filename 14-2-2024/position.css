@@ -1,0 +1,32 @@
+body{
+    background-color: red;
+
+}
+.bigbox{
+    background-color: greenyellow;
+    width: 60%;
+    height: 500px;
+    border:10px solid greenyellow
+
+}
+.middlebox{
+    background-color: blue;
+    width:40%;
+    height: 300px;
+    border:10px solid blue;
+   
+}
+.smallbox{
+    background-color: yellow;
+    width: 25%;
+    margin-left: 700px;
+    border: 10px solid yellow;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+   
+}
+.middlebox{
+    position: relative;
+}

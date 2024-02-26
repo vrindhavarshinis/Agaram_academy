@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.bigbox{
+    width: 600px;
+    margin: 0 auto;
+    background-color: purple;
+    padding: 100px 50px;
+}
+.section1{
+    width:100%;
+    background-color: darkgreen;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+}
+.smallbox div{
+    width:25%;
+    height:150px;
+    background-color: red;
+    display: inline-block;
+    margin-left: 20px;
+}
+.section2{
+    width:100%;
+    background-color: darkgreen;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;   
+}
+.fivebox{
+    width: 16%;
+    background-color: red;
+    margin-left: 10px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+   

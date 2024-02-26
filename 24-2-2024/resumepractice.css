@@ -1,0 +1,30 @@
+h1{
+    animation-name: anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes anim{
+    from{transform:translate(20px);}
+    to{transform:translate(1200px)}
+    from{transform:translate(1200px)}
+    to{transform:translate(20px);}
+   
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.main{
+    margin-top: 10px;
+}
+.sub{
+    margin-top: 10px;
+}
+.code_preview{
+    border: 1px solid red;
+    color:blue;
+    width: 250px;
+    height: 600px;
+}

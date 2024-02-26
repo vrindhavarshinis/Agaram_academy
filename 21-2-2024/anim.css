@@ -1,0 +1,49 @@
+@keyframes car{
+    from{transform:translate(0px)}
+    to{transform:translate(1050px)}
+}
+body{
+
+    display: flex;
+    justify-content:space-between ;
+    background-color: #d90429;
+}
+.img{
+    animation-name: car;
+    animation-duration:2s;
+    max-width: 200px;
+    max-height: 200px;
+    /* animation-iteration-count: infinite; */
+    /* animation-direction:reverse; */
+    margin-top: 300px;
+    animation-delay: 1s;
+    
+    
+    
+  
+}
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+.div{
+    width:20%;
+   /* animation-iteration-count: infinite; */
+    animation-name: box;
+    height: 200px;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    margin-top: 200px;
+    animation-delay: 2s;
+   
+   
+
+}
+/* @keyframes box{
+    from{background-color:black}
+    to{background-color: red;}
+} */
+@keyframes box{
+   
+    from{transform:rotate(180deg)}
+}

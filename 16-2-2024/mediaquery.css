@@ -1,0 +1,39 @@
+.one{
+    width:100%;
+    border:10px solid black;
+    font-size: large;
+    height:200px;
+    /* display: inline-block; */
+}
+.two{
+    width:100%;
+    border:10px solid black;
+    font-size: large;
+    height:200px;
+    /* display: inline-block; */
+}
+@media screen and (max-width:300px) {
+.container div{
+        width:47%;
+        display: inline-block;
+        background-color: maroon;
+        text-align: center;
+    }
+    .two{
+        width:47%;
+        display: inline-block;
+        background-color: maroon;
+        text-align: center;
+    }
+
+}
+/* @media screen and (min-width: 500px){
+    .one{
+        width: 45%;
+        background: blue;
+    }
+    .two{
+        width: 45%;
+        background: red;
+    }
+} */

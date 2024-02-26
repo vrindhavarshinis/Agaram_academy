@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="resumebuilder.css" rel="stylesheet">
+    <script src="resumebuilder.js" type="text/javaScript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <div class="main">
+        <form class="register">
+            <div class="input_container">
+                <label>Name</label>
+                <input type="text"  placeholder="Enter Your Name" onkeyup="gen(this,'name')"/>
+            </div>
+            <div class="input_container">
+                <label>Email</label>
+                <input type="email" placeholder="Enter Your email" onkeyup="gen(this,'email')"/>
+            
+            </div>
+            <div class="input_container">
+                <label>Phone Number</label>
+                <input type="number" placeholder="Enter Your Phone Number" onkeyup="gen(this,'phonenumber')"/>
+            </div>
+            <div class="input_container">
+                <label>Date of Birth</label>
+                <input type="text"  placeholder="Enter Your date of birth" onkeyup="gen(this,'date of birth')"/>
+            
+            </div>
+            <div class="input_container">
+                <label>Skills</label>
+                <input type="text" placeholder="Enter Your Skills" id="skill" />
+                <button type="button" onclick="addarrays('skills','skill')">click to Add another skill</button>
+            </div>
+            <div class="input_container">
+                <label>Hobbies</label>
+                <input type="text"  placeholder="Enter Your hobby"  id="hobby"/>
+                <button type="button"  onclick="addarrays('hobbies','hobby')">click to Add another hobby</button>
+            
+            </div>
+            <div class="input_container">
+                <label>Father's Name</label>
+                <input type="text"  placeholder="Enter Your Father's Name" onkeyup="gen(this,'father name','personal_details')"/>
+            </div>
+            <div class="input_container">
+                <label>Mother's Name</label>
+                <input type="text"  placeholder="Enter Your Mother's Name" onkeyup="gen(this,'mother name','personal_details')"/>
+            </div>
+            <h2>Education</h2>
+            <div class="input_container">
+                <label>UG</label>
+                <input type="text"  placeholder="Enter course name" onkeyup="gen(this,'education',false,0,'course_name')"/>
+                <input type="text"  placeholder="Enter institution name" onkeyup="gen(this,'education',false,0,'institution_name')"/>
+                <input type="number"  placeholder="Enter percentage scored" onkeyup="gen(this,'education',false,0,'percentage_scored')"/>
+                <input type="number"  placeholder="Enter year of passed out" onkeyup="gen(this,'education',false,0,'Year')"/>
+            </div>
+            <div class="input_container">
+                <label>10th</label>
+                <input type="text"  placeholder="Enter course name" onkeyup="gen(this,'education',false,1,'course_name')"/>
+                <input type="text"  placeholder="Enter institution name" onkeyup="gen(this,'education',false,1,'institution_name')"/>
+                <input type="number" placeholder="Enter percentage scored" onkeyup="gen(this,'education',false,1,'percentage_scored')"/>
+                <input type="number"  placeholder="Enter year of passed out" onkeyup="gen(this,'education',false,1,'Year')"/>
+            </div>
+            <div class="input_container">
+                <label>12th</label>
+                <input type="text"  placeholder="Enter course name" onkeyup="gen(this,'education',false,2,'course_name')"/>
+                <input type="text"  placeholder="Enter institution name" onkeyup="gen(this,'education',false,2,'institution_name')"/>
+                <input type="number"  placeholder="Enter percentage scored" onkeyup="gen(this,'education',false,2,'percentage_scored')"/>
+                <input type="number"  placeholder="Enter year of passed out" onkeyup="gen(this,'education',false,2,'Year')"/>
+            </div>
+
+        </form>
+
+        <div class="code_preview">
+            <pre id="code"></pre>
+        </div>
+
+        
+    </div>
+    
+</body>
+</html>

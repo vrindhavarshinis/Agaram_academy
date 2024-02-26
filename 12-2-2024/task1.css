@@ -1,0 +1,76 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    background-color: rgb(80, 80, 233);
+    border-radius: 5px;
+    margin:0;
+    padding:20px;
+    color: white;
+    font-size: larger;
+    padding-left:50px;
+}
+.footer{
+    background-color: rgb(80, 80, 233);
+    border-radius: 5px;
+    margin:0;
+    padding:20px;
+    color: white;
+    font-size: larger;
+    padding-left: 50px;
+}
+
+.main{
+    color:white;
+    border-radius: 10px;
+    background-color: rgb(13, 128, 0);
+    height:700px;
+    width:73%;
+    display: inline-block;
+    padding-top:  20px;
+    padding-left: 0px;
+    font-size: larger;
+    margin: auto;
+   
+    
+    
+
+
+}
+.sidebar{
+    color:white;
+    border-radius: 10px;
+    background-color: rgb(236, 79, 6);
+    height:700px;
+    width:24%;
+    display: inline-block;
+    padding-top:  20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: larger;
+    vertical-align: top;
+    
+    
+}
+.list li{
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    border:1px solid darkgreen;
+    background-color:darkgreen;
+    width:220px;
+    height:150px;
+    margin-left: 10px;
+    padding-top:50px;
+    margin-top:10px;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 10px;
+    line-height: 80px;
+    
+}
+.one{
+    padding-left:50px;
+    font-size: larger;
+    
+}

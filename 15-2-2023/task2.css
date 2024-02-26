@@ -1,0 +1,68 @@
+.bigcontainer{
+    border: 3px solid black;
+    width:99%;
+    height: 700px;
+    margin:5px 5px;
+}
+.paragraph{
+    margin-left: 100px;
+    margin-top: 10px;
+    width:20%;
+}
+.para2{
+    border:1px solid black;
+    width:97%;
+    height:350px;
+    margin-left: 20px;
+    text-align: right;
+    line-height: 250px;
+    background-color: yellowgreen;
+    color: black;
+    position: relative;
+    
+   
+    
+}
+.para2 h3{
+   letter-spacing: 1px;
+   word-spacing: 2px;
+   margin-right: 500px;
+   
+} 
+.para2 b{
+    border:1px solid yellow;
+    
+    margin:2px 2px;
+}
+.redpara{
+    
+    width:40%;
+    height:80px;
+    position:absolute;
+    text-align: center;
+    margin-top:-40px;
+    margin-left:850px;
+    background-color: red;
+   
+    
+}
+.redpara b{
+    border:1px dotted white;
+    width: fit-content;
+    height: fit-content;
+    text-align: right;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+.redpara h5{
+    width:40%;
+    line-height: 25px;
+    margin-right:60px;
+    position: absolute;
+    bottom:10px;
+    right: 10px;
+}
+.one{
+    margin-left: 100px;
+    width:20%;
+}

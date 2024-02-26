@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="resumepractice.css" rel="stylesheet">
+    <script src="resumepractice.js" type="text/javaScript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <div class="container">
+        <div class="main">
+            <div class="sub">
+                <label>Name</label>
+                <input type="text" onkeyup="getresume(this,'name')" placeholder="Enter Your Name"/>
+            </div>
+            <div class="sub">
+                <label>Skills</label>
+                <input type="text" id="skill" placeholder="Enter your skills"/>
+                <button type="button" onclick="addarrays('skills','skill')">Add another Skill</button>
+            </div>
+            <div class="sub">
+                <label>Father's Name</label>
+                <input type="text" onkeyup="getresume(this,'fathername','personaldetails')" placeholder="Enter Your Father Name"/>
+            </div>
+            <div class="sub">
+                <label>Mother's Name</label>
+                <input type="text" onkeyup="getresume(this,'mothername','personaldetails')" placeholder="Enter Your Mother Name"/>
+            </div>
+            <div class="sub">
+                <label>UG</label>
+                <input type="text" placeholder="Enter Course Name" onkeyup="getresume(this,'academicdetails',false,0,'coursename')"/>
+                <input type="text" placeholder="Enter institution Name" onkeyup="getresume(this,'academicdetails',false,0,'institutionname')"/>
+                <input type="number" placeholder="Enter percentage scored" onkeyup="getresume(this,'academicdetails',false,0,'percentagescored')"/>
+                <input type="number" placeholder="Enter passed out year" onkeyup="getresume(this,'academicdetails',false,0,'year')"/>
+            </div>
+            <div class="sub">
+                <label>12th</label>
+                <input type="text" placeholder="Enter Course Name" onkeyup="getresume(this,'academicdetails',false,1,'coursename')"/>
+                <input type="text" placeholder="Enter institution Name" onkeyup="getresume(this,'academicdetails',false,1,'institutionname')"/>
+                <input type="number" placeholder="Enter percentage scored" onkeyup="getresume(this,'academicdetails',false,1,'percentagescored')"/>
+                <input type="number" placeholder="Enter passed out year" onkeyup="getresume(this,'academicdetails',false,1,'year')"/>
+            </div>
+        </div>
+        <div class="code_preview">
+            <pre id="code">
+
+            </pre>
+
+        </div>
+    </div>
+</body>
+</html>

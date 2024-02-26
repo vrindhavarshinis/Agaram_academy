@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.background{
+    
+    width:100%;
+    height:5000px;
+    position: relative;
+    
+}
+.header{
+    background-color: white;
+    display: flex;
+    position:sticky;
+    top:0px;
+    z-index: 2;
+    
+}
+.header img{
+    width: 115px;
+    height: 115px;
+    margin-top: 8px;
+    margin-left: 70px;
+}
+.header ul{
+    display:flex;
+    list-style: none;
+    width: 898px;
+    height: 49px;
+    margin-top: 40px;
+    margin-left: 330px;
+    border-radius: 10px;
+    justify-content: flex-end;
+    gap: 10px;
+}
+ul :nth-of-type(6){
+    color:white;
+   
+}
+.products{
+    color:rgb(196, 196, 33)
+}
+.six{
+    background-color:rgb(196, 196, 33);
+    
+    border-radius: 10px;
+    width:140px;
+    text-align: center;
+    height: 49px;
+    line-height: 49px;
+    margin-top: 0px;
+    color:white;
+}
+select{
+    
+    border:none;
+    outline-color: white;
+}
+
+.main{
+    background-image: url(blue.png.crdownload);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    background-color:rgba(175, 173, 173, 0.964) ;
+    font-family: "Poppins", sans-serif;
+    
+    
+    
+    
+}
+.main h1{
+    width:35%;
+    word-spacing: 3px;
+    margin-top: 130px;
+    margin-left: 85px;
+}
+.text p{
+    font-size: large;
+    width: 30%;
+    margin-top: 50px;
+    margin-left: 85px;
+    line-height: 30px;
+    
+}
+.girl{
+    position: absolute;
+    max-width: 573px;
+    max-height: 341px;
+    margin-left:850px;
+    margin-top: 150px;
+    z-index: 1;
+    
+}
+.orange{
+    display: flex;
+    background-color: rgb(255, 157, 0);
+    height: 150px;
+}
+.orange img{
+    max-width: 120px;
+    max-height:120px;
+    margin-left: 85px;
+}
+.orange h3{
+    color:white;
+    margin-left: 30px;
+    margin-top: 40px;
+    width: 28%;
+    letter-spacing: 0.7px;
+    word-spacing: 3px;
+    font-size:x-large;
+    font-weight: bold;
+}
+.orange p{
+    background-color: white;
+    color: black;
+    width:30%;
+    height: 30px;
+    margin-left: 290px;
+    border-radius: 7px;
+    line-height: 30px;
+    padding:5px;
+    margin-top: 40px;
+    font-size: large;
+    letter-spacing: 1px;
+}
+.head{
+    display: flex;
+    background-color: white;
+    height: 140px;
+}
+.head ul{
+    display: flex;
+    gap:30px;
+    list-style: none;
+    justify-content: space-evenly;
+
+}
+.list li{
+    background-color: rgb(174, 174, 174);
+   
+    height: 20px;
+    padding:5px 20px;
+    border-radius: 7px;
+    width:25%;
+    margin-top: 50px;
+    font-size: large;
+    letter-spacing: 1.5px;
+    text-align: center;
+   
+    
+}
+.list{
+    margin-left: 110px;
+}
+.list li:nth-of-type(1){
+   background-color: rgb(196, 196, 33);
+   width:200px;
+}
+.search{
+    border: 1px solid black;
+    border-radius: 7px;
+    width:200px;
+    height: 30px;
+    margin: 50px;
+    margin-left: 370px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3px;
+    
+}
+.search i{
+    color:rgb(196, 196, 33);
+    
+}
+
+.main2 li{
+    list-style: none;
+    background-color: rgb(174, 174, 174);
+   
+    height: 20px;
+    padding:5px 20px;
+    border-radius: 7px;
+    width:45%;
+    margin-top: 50px;
+    font-size: large;
+    letter-spacing: 1.5px;
+    margin-left: 110px;
+    
+}
+.main2{
+    display: flex;
+    
+}
+.textimage{
+    display:flex;
+    
+}
+.one{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.two{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.three{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.textimage1{
+    display: flex;
+    margin-left: 260px;
+}
+.one1{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.two1{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.three1{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.textimage2{
+    display: flex;
+    margin-left: 260px;
+}
+.one2{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.two2{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.three2{
+    height: 600px;
+    width: 345px;
+    border-radius: 7px;
+    background-color:white;
+    box-shadow: 3px 3px 3px 3px grey;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.textimage img{
+    width: 345px;
+    height: 180px;
+    display: block;
+}
+.textimage h2{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 5px;
+}
+.textimage p{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 9px 9px;
+    line-height: 25px;
+}
+
+.textimage1 img{
+    width: 345px;
+    height: 180px;
+    display: block;
+}
+.textimage1 h2{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 5px;
+}
+.textimage1 p{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 9px 9px;
+    line-height: 25px;
+}
+.textimage2 img{
+    width: 345px;
+    height: 180px;
+    display: block;
+}
+.textimage2 h2{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 5px;
+}
+.textimage2 p{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 9px 9px;
+    line-height: 25px;
+}
+.footer{
+    display: flex;
+    margin-top: 40px;
+    gap:30px;
+    margin-left: 300px;
+    list-style: none;
+}
+.footer li{
+    background-color: grey;
+    border: 1px solid grey;
+    border-radius: 7px;
+    padding: 5px 10px;
+   
+    color: black;
+}
+.footer li:hover{
+    background-color:rgb(196, 196, 33);
+    color: white;
+
+    
+}

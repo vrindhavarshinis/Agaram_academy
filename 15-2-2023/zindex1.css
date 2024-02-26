@@ -1,0 +1,30 @@
+/* body{
+    position: relative;
+} */
+.container{
+    position:relative;
+   
+}
+.img1{
+    max-width: 200px;
+    z-index:0;
+    position:absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.img2{
+    max-width: 200px;
+    z-index: 0;
+    position:absolute;
+    margin-left: 200px;
+    margin-top: 200px;
+    
+}
+.img3{
+    max-width: 200px;
+    z-index: 0;
+    position:absolute;
+    /* margin-left: 400px;
+    margin-top:400px;
+    */
+}
