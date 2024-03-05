@@ -11,10 +11,19 @@
     margin-top: 10px;
     margin-left: 0px;
     text-align: left;
+    
+}
+h1{
+    text-align: center;
+}
+.register{
+    height: 600px;
+    overflow-y: scroll;
 }
 pre{
     width: 250px;
     border:1px solid black;
     height:600px;
+    overflow-y: scroll;
     
 }

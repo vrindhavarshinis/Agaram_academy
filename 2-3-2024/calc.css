@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    vertical-align: middle;
+   
+}
+.container{
+    background-color: black;
+    width: 25%;
+    height: 650px;
+    border-radius: 15px;
+}
+.calculator{
+    display: flex;
+    justify-content: center;
+}
+.calculator input{
+    width:90%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: gainsboro;
+    text-align: right;
+    font-size:50px;
+    height: 80px;
+
+}
+.headrow{
+    font-size: large;
+  
+}
+.row1{
+    display: flex;
+    justify-content:space-evenly;
+}
+.row1 button{
+    margin-top: 15px;
+    padding: 25px;
+    text-align: center;
+    max-width:150px;
+    max-height: 150px;
+    border-radius: 50%;
+    font-size: large;
+    
+   
+}
+.row2{
+    display: flex;
+    justify-content:space-evenly;
+}
+.row2 button{
+    margin-top: 15px;
+    padding: 25px;
+    text-align: center;
+    max-width:150px;
+    max-height: 150px;
+    border-radius: 50%;
+    font-size: large;
+    
+   
+}
+.row3{
+    display: flex;
+    justify-content:space-evenly;
+}
+.row3 button{
+    margin-top: 10px;
+    padding: 25px;
+    text-align: center;
+    max-width:150px;
+    max-height: 150px;
+    border-radius: 50%;
+    font-size: large;
+    
+   
+}
+.row4{
+    display: flex;
+    justify-content:space-evenly;
+}
+.row4 button{
+    margin-top: 15px;
+    padding: 25px;
+    text-align: center;
+    max-width:150px;
+    max-height: 150px;
+    border-radius: 50%;
+    font-size: large;
+    
+   
+}
+.row5{
+    display: flex;
+    justify-content:space-evenly;
+}
+.row5 button{
+    margin-top: 15px;
+    padding: 25px;
+    text-align: center;
+    max-width:150px;
+    max-height: 150px;
+    border-radius: 100%;
+    font-size: large;
+    
+   
+}

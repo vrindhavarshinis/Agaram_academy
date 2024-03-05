@@ -2,7 +2,7 @@ let myresume={
    skills:[],
    hobbies:[],
    personal_details:{
-
+        languages_known:[]
 
    },
    education:[
@@ -23,6 +23,41 @@ let myresume={
         institution_name:"",
         percentage_scored:"",
         Year:""
+    }
+   ],
+   experience:[
+    {
+        company_name:"",
+        role:"",
+        year_of_experience:""
+    },
+    {
+        company_name:"",
+        role:"",
+        year_of_experience:""
+    }
+
+   ],
+   projects:[
+    {
+        title:"",
+        year:"",
+        role:""
+    },
+    {
+        title:"",
+        year:"",
+        role:""
+    }
+   ],
+   certifications:[
+    {
+        certificate_name:"",
+        given_institution:""
+    },
+    {
+        certificate_name:"",
+        given_institution:""
     }
    ]
 };
@@ -48,5 +83,12 @@ function addarrays(key,id){
     myresume[key].push(value)
     document.getElementById(id).value=""
     preview()
+}
+function getlanguage(p_key,c_key,id){
+    let value=document.getElementById(id).value
+    myresume[p_key][c_key].push(value)
+    document.getElementById(id).value=""
+    preview()
+
 }
 
