@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Templates</title>
+    <script defer src="myresume.js" type="text/javaScript"></script>
+    <link href="templatelist.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style="font-size: 40px;">List of Templates</h1>
+
+   
+
+    <div>
+    <div class="templateslist" style="list-style-type: square; font-size:25px; text-align: center;" >
+       
+        <h3><a href="#"  onclick="goToTemplate(1)">Template 1</a></h3>
+        <h3><a href="#" onclick="goToTemplate(2)">Template 2</a></h3>
+        <h3><a href="#" onclick="goToTemplate(3)">Template 3</a></h3>
+        <h3><a href="#" onclick="goToTemplate(4)">Template 4</a></h3>
+        <h3><a href="#" onclick="goToTemplate(5)">Template 5</a></h3>
+    </div>
+</div>
+    <div class="loginbutton">
+        <button type="button" onclick="logout()">Log Out</button>
+    </div>
+
+</body>
+<script>
+    
+   function goToTemplate(template_id){
+
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+
+  
+  
+       if(template_id == 1){
+           window.location = `template_1/index.html?id=${id}`
+         
+       }
+       
+       else if(template_id == 2){
+           window.location = `template_2/index.html?id=${id}`
+       }
+       else if(template_id == 3){
+           window.location = `template_3/index.html?id=${id}`
+       }
+   }
+
+ 
+   function logout(){
+        localStorage.removeItem("login_credentials")
+        window.location="login.html"
+   }
+
+</script>
+
+</html>
+<script type="module">
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+   import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
+ 
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+     apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
+     authDomain: "resumebuilder-a39bb.firebaseapp.com",
+     projectId: "resumebuilder-a39bb",
+     storageBucket: "resumebuilder-a39bb.appspot.com",
+     messagingSenderId: "842904588733",
+     appId: "1:842904588733:web:ded89179b09898e2a742d4"
+   };
+ 
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+
+    let params = new URLSearchParams(document.location.search);
+   let id = params.get("id");
+  
+   
+    
+   getDocs(collection(db,"myresumes")).then(docSnap => {
+       let renderHTML="";
+       docSnap.forEach((each) => {
+           let eachResume=each.data();
+         
+       })
+   })
+
+
+  
+
+
+
+ </script>
+

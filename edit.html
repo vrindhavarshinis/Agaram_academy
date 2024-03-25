@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Html</title>
+    <script defer src="myresume.js" type="text/javaScript"></script>
+</head>
+<body>
+    <div>
+        <label>Title</label>
+        <input id="newtitle" type="text" />
+    </div>
+    <br>
+    <div>
+        <label>Name</label>
+        <input id="newname" type="text" />
+    </div>
+    <br>
+    <div>
+        
+        <div id="newskills" >
+         
+        </div>
+        <button type="button"  id="addskills" >Click to Add New Skill</button>
+    </div>
+    <br>
+    
+    <table id="table" border="1">
+       <thead>
+          <th>Course Name</th>
+          <th>Institution Name</th>
+          <th>Percentage Scored</th>
+          <th>Year</th>
+       </thead>
+       <tbody id="education">
+            
+    </tbody>
+    </table>
+    <button type="button" id="addeducation">Add Education</button>
+
+    <br>
+    <br>
+
+
+    <table id="experience_table" border="1">
+        <thead>
+           <th>Company Name</th>
+           <th>Role</th>
+           <th>Year of Experience</th>
+          
+        </thead>
+        <tbody id="experience">
+             
+     </tbody>
+     </table>
+     <button type="button"id="addexperience">Add Experience</button>
+ 
+     <br>
+     <br>
+
+     <table id="project_table" border="1">
+        <thead>
+           <th>Title</th>
+           <th>Year</th>
+           <th>Role</th>
+          
+        </thead>
+        <tbody id="project">
+             
+     </tbody>
+     </table>
+     <button type="button" id="addproject">Add Projects</button>
+ 
+     <br>
+     <br>
+
+     <table id="certification_table" border="1">
+        <thead>
+           <th>Certificate Name</th>
+           <th>Given Institution</th>
+          
+          
+        </thead>
+        <tbody id="certification">
+             
+     </tbody>
+     </table>
+     <button type="button" id="addcertification">Add Certification</button>
+ 
+     <br>
+     <br>
+   
+       
+        <div id="newlanguage">
+
+        </div>
+        <button type="button"id="addlanguage">Click to Add New Languages</button>
+        <br>
+       
+
+        <div id="newhobbies">
+
+        </div>
+        <button type="button" id="addhobby">Click to Add New Hobbies</button>
+        <br>
+        
+   
+        <button type="button" id="updateexistingdata">update</button>
+</body>
+<script>
+    
+
+ 
+   
+    
+   
+
+
+     
+    
+//      function addedu(){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+       
+//         let educationlength= parseddata[index].education.length
+//         let tbody=document.getElementById("education").innerHTML
+
+//         neweducation=`<tr>
+//             <td><input type="text" onkeyup="updateedu(this,${educationlength},'course_name')" ></td>     
+//             <td><input type="text" onkeyup="updateedu(this,${educationlength},'institution_name')"></td>    
+//             <td><input type="text"  onkeyup="updateedu(this,${educationlength},'percentage_scored')"></td>     
+//             <td><input type="text"  onkeyup="updateedu(this,${educationlength},'Year')"></td></tr>`  
+        
+//             document.getElementById("education").innerHTML=tbody+neweducation
+      
+//         localStorage.setItem("resume",JSON.stringify(parseddata))               
+
+//      }
+
+//      function updateedu(data,educationlength,key){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+
+//         parseddata[index].education[educationlength]={
+//             course_name:"",
+//             institution_name:"",
+//             percentage_scored:"",
+//             Year:""
+            
+//         }
+//         localStorage.setItem("resume",JSON.stringify(parseddata))  
+//         window.location.reload()             
+
+//      }
+
+
+
+
+
+
+     
+    
+//      function addexp(){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+       
+//         let experiencelength= parseddata[index].experience.length
+//         let tbody=document.getElementById("experience").innerHTML
+
+//         newexperience=`<tr>
+//             <td><input type="text" onkeyup="updateexp(this,${experiencelength},'company_name'')" ></td>     
+//             <td><input type="text" onkeyup="updateexp(this,${experiencelength},'role')"></td>    
+//             <td><input type="text"  onkeyup="updateexp(this,${experiencelength},'year_of_experience')"></td></tr>`  
+        
+//             document.getElementById("experience").innerHTML=tbody+newexperience
+      
+//         localStorage.setItem("resume",JSON.stringify(parseddata))               
+
+//      }
+
+//      function updateexp(data,experiencelength,key){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+
+//         parseddata[index].education[experiencelength]={
+//             company_name:"",
+//             role:"",
+//             year_of_experience:""
+           
+            
+//         }
+//         localStorage.setItem("resume",JSON.stringify(parseddata))  
+//         window.location.reload()             
+
+//      }
+
+
+
+
+     
+    
+//      function addexp(){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+       
+//         let projectlength= parseddata[index].projects.length
+//         let tbody=document.getElementById("project").innerHTML
+
+//         newproject=`<tr>
+//             <td><input type="text" onkeyup="updateproject(this,${projectlength},'title'')" ></td>     
+//             <td><input type="text" onkeyup="updateproject(this,${projectlength},'year')"></td>    
+//             <td><input type="text"  onkeyup="updateproject(this,${projectlength},'role')"></td></tr>`  
+        
+//             document.getElementById("project").innerHTML=tbody+newproject
+      
+//         localStorage.setItem("resume",JSON.stringify(parseddata))               
+
+//      }
+
+//      function updateproject(data,projectlength,key){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+
+//         parseddata[index].projects[projectlength]={
+//             title:"",
+//             year:"",
+//             role:""
+           
+            
+//         }
+//         localStorage.setItem("resume",JSON.stringify(parseddata))  
+//         window.location.reload()             
+
+//      }
+
+
+//     let certificates="";
+//    for (let each in parseddata[index].certifications){
+   
+//     certificates = certificates +
+//             `<tr>
+//              <td><input type="text"  onkeyup="update(this,${each},'certificate_name')" value=${parseddata[index]. certifications[each].certificate_name} ></td>
+//              <td><input type="text"  onkeyup="update(this,${each},'given_institution')" value=${parseddata[index]. certifications[each].given_institution} ></td>
+             
+//             </tr>`
+//       }
+//      document.getElementById("certification").innerHTML=certificates
+     
+    
+//      function addcertification(){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+       
+//         let certificationlength= parseddata[index].certifications.length
+//         let tbody=document.getElementById("certification").innerHTML
+
+//         newcertification=`<tr>
+//             <td><input type="text" onkeyup="updatecertification(this,${certificationlength},'certificate_name'')" ></td>     
+//             <td><input type="text"  onkeyup="updatecertification(this,${certificationlength},'given_institution')"></td></tr>`  
+        
+//             document.getElementById("certification").innerHTML=tbody+newcertification
+      
+//         localStorage.setItem("resume",JSON.stringify(parseddata))               
+
+//      }
+
+//      function updatedcertification(data,certificationlength,key){
+//         let params = new URLSearchParams(document.location.search);
+//         let index= params.get("index");
+
+//         let existingdata=localStorage.getItem("resume")
+//         let parseddata=JSON.parse(existingdata)
+
+//         parseddata[index].projects[certificationlength]={
+//          certificate_name:"",
+//          given_institution:"",
+           
+           
+            
+//         }
+//         localStorage.setItem("resume",JSON.stringify(parseddata))  
+//         window.location.reload()             
+
+//      }
+    
+    
+     
+
+
+    
+
+
+
+  
+</script>
+</html>
+<script type="module">
+   // Import the functions you need from the SDKs you need
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+   import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
+ 
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+     apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
+     authDomain: "resumebuilder-a39bb.firebaseapp.com",
+     projectId: "resumebuilder-a39bb",
+     storageBucket: "resumebuilder-a39bb.appspot.com",
+     messagingSenderId: "842904588733",
+     appId: "1:842904588733:web:ded89179b09898e2a742d4"
+   };
+ 
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+
+   let params = new URLSearchParams(document.location.search);
+   let id= params.get("id");
+
+  
+
+    
+
+     
+       
+//getdata
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+   if (docSnap.exists()){
+      
+   document.getElementById("newtitle").value=( docSnap.data()['title'])
+   document.getElementById("newname").value=( docSnap.data()['name'])
+
+        let skill="";
+    let changedskills=document.getElementById("newskills");
+    for (let each of ( docSnap.data()['skills']) ){
+        
+       
+        skill=skill + `Skill:<input type="text" class="addskill" value="${each}"/>`
+       
+    }
+    document.getElementById("newskills").innerHTML=skill  
+
+
+  
+
+       let educations="";
+   for (let each of ( docSnap.data()['education'])){
+   
+     educations = educations +
+            `<tr>
+             <td><input type="text"  onkeyup="update(this,${each},'course_name')" value=${each.course_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'institution_name')" value=${each.institution_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'percentage_scored')" value=${each.percentage_scored} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'Year')" value=${each.Year} ></td>
+            </tr>`
+      }
+     document.getElementById("education").innerHTML=educations
+
+
+          let experience="";
+   for (let each of  ( docSnap.data()['experience'])){
+   
+     experience = experience +
+            `<tr>
+             <td><input type="text"  onkeyup="update(this,${each},'company_name')" value=${each.company_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'role')" value=${each.role} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'year_of_experience')" value=${each.year_of_experience} ></td>
+             
+            </tr>`
+      }
+     document.getElementById("experience").innerHTML=experience
+
+
+     let certificates="";
+   for (let each of  ( docSnap.data()['certifications'])){
+   
+    certificates = certificates +
+            `<tr>
+             <td><input type="text"  onkeyup="update(this,${each},'certificate_name')" value=${each.certificate_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'given_institution')" value=${each.given_institution} ></td>
+             
+            </tr>`
+      }
+     document.getElementById("certification").innerHTML=certificates
+
+          let project="";
+   for (let each of ( docSnap.data()['projects'])){
+   
+     project = project +
+            `<tr>
+             <td><input type="text"  onkeyup="update(this,${each},'title')" value=${each.title} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'year')" value=${each.year} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'role')" value=${each.role} ></td>
+             
+            </tr>`
+      }
+     document.getElementById("project").innerHTML=project
+
+
+     let language="";
+   for (let each of ( docSnap.data()['personal_details']["languages_known"]) ){
+       language=language + `Languages Known:<input type="text" class="addlanguage" value="${each}"/>`
+    }
+   document.getElementById("newlanguage").innerHTML=language 
+
+
+   let hobby="";
+   for (let each of ( docSnap.data()['personal_details']["hobbies"]) ){
+       hobby=hobby + `Hobbies:<input type="text" class="addHobbies" value="${each}"/>`
+    }
+   document.getElementById("newhobbies").innerHTML=hobby
+   }
+}); 
+
+updateexistingdata.addEventListener('click',(e) => {
+    let  updated_name=document.getElementById("newname").value
+    let  updated_title=document.getElementById("newtitle").value
+
+ let updatedskills=document.getElementsByClassName("addskill")
+ let newskill=[];
+    for (let skill of updatedskills){
+        newskill.push(skill.value)
+    }
+
+
+ let updatedhobbies=document.getElementsByClassName("addHobbies")
+
+let hobbiesnew=[];
+   for (let hobby of updatedhobbies){
+
+      hobbiesnew.push(hobby.value);
+    
+    }
+
+let updatelanguage=document.getElementsByClassName("addlanguage")
+
+let  languagesknown=[];
+    for (let language of updatelanguage){
+
+        languagesknown.push(language.value)
+       
+    }
+
+
+   
+updateDoc(doc(db, "myresumes",id), {
+     name:updated_name,
+     title:updated_title,
+     skills:newskill,
+     personal_details:{
+         languages_known:languagesknown,
+         hobbies:hobbiesnew,
+     },
+     education:[
+        
+     ]
+
+});
+
+
+function updateedu(data,educationlength,key){
+        let params = new URLSearchParams(document.location.search);
+        let index= params.get("index");
+
+        let existingdata=localStorage.getItem("resume")
+        let parseddata=JSON.parse(existingdata)
+
+        parseddata[index].education[educationlength]={
+            course_name:"",
+            institution_name:"",
+            percentage_scored:"",
+            Year:""
+            
+        }
+        localStorage.setItem("resume",JSON.stringify(parseddata))  
+        window.location.reload()             
+
+     }
+
+
+
+});
+
+
+// add boxes
+
+addskills.addEventListener('click', (event) => {
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+   if (docSnap.exists()){
+   let skill=""
+    for (let each of ( docSnap.data()['skills']) ){
+        skill=skill + `Skill:<input type="text" class="addskill" value="${each}"/>`
+       
+    }
+     let addskill= `Skill:<input type="text" id="addskills" class="addskill" />`
+    document.getElementById("newskills").innerHTML=skill+addskill
+   }
+
+})
+})
+
+addskills.addEventListener('click', (event) => {
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+   if (docSnap.exists()){
+   let skill=""
+    for (let each of ( docSnap.data()['skills']) ){
+        skill=skill + `Skill:<input type="text" class="addskill" value="${each}"/>`
+       
+    }
+     let addskill= `Skill:<input type="text" id="addskills" class="addskill" />`
+    document.getElementById("newskills").innerHTML=skill+addskill
+   }
+
+})
+})
+
+addlanguage.addEventListener('click', (event) => {
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+    let language="";
+   for (let each of ( docSnap.data()['personal_details']["languages_known"]) ){
+       language=language + `Languages Known:<input type="text" class="addlanguage" value="${each}"/>`
+    }
+ 
+        let addlanguage= `Language:<input type="text" id="newlanguage" class="addlanguage" />`
+
+        document.getElementById("newlanguage").innerHTML=language+addlanguage
+
+})
+})
+
+addhobby.addEventListener('click', (event) => {
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+    let hobby=""
+    for (let each of ( docSnap.data()['personal_details']["hobbies"]) ){
+       hobby=hobby + `Hobbies:<input type="text" class="addHobbies" value="${each}"/>`
+    }
+    let addhobby=`Hobby:<input type="text" id="newhobbies" class="addhobbies"/>`
+    document.getElementById("newhobbies").innerHTML=hobby+addhobby
+  
+})
+})
+
+
+addhobby.addEventListener('click', (event) => {
+getDoc(doc(db, "myresumes",id)).then(docSnap =>{
+    let educations="";
+   for (let each of ( docSnap.data()['education'])){
+   
+     educations = educations +
+            `<tr>
+             <td><input type="text"  onkeyup="update(this,${each},'course_name')" value=${each.course_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'institution_name')" value=${each.institution_name} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'percentage_scored')" value=${each.percentage_scored} ></td>
+             <td><input type="text"  onkeyup="update(this,${each},'Year')" value=${each.Year} ></td>
+            </tr>`
+      }
+    
+        neweducation=`<tr>
+            <td><input type="text" onkeyup="updateedu(this,${educationlength},'course_name')" ></td>     
+            <td><input type="text" onkeyup="updateedu(this,${educationlength},'institution_name')"></td>    
+            <td><input type="text"  onkeyup="updateedu(this,${educationlength},'percentage_scored')"></td>     
+            <td><input type="text"  onkeyup="updateedu(this,${educationlength},'Year')"></td></tr>`  
+        
+            document.getElementById("education").innerHTML=tbody+neweducation
+      
+  
+})
+})
+
+
+
+ </script>

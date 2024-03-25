@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <script src="myresume.js" type="text/javaScript"></script>
+    <link href="register.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        
+        <div class="container">
+            <div class="heading">
+                <h1 style="text-align: center;">Register</h1>
+           </div>
+           <table>
+            <tbody>
+                <div class="input">
+                    <tr><td >Enter your Name:</td><td><input type="text" required onkeyup="reg(this,'name')" id="reg_name" placeholder="Enter Your Name"></td></tr>
+               </div>
+            <div class="input">
+                 <tr><td >Enter your Email:</td><td><input type="email" required onkeyup="reg(this,'email')" id="reg_email" placeholder="Enter Your Email"></td></tr>
+            </div>
+            <div class="input">
+                <tr><td>Enter your Password:</td><td><input type="text"   required   onkeyup="reg(this,'password')" id="reg_password" placeholder="Enter Your Password"></td></tr>
+           </div>
+          
+            </tbody>
+            </table>
+           
+           <div class="button">
+            <div class="signin">
+                <button type="button" onclick="signin()" >Sign in</button>
+            </div>
+            <div class="register">
+                <button type="button" id="registerusers">Register</button>
+            </div>
+          
+       </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
+      authDomain: "resumebuilder-a39bb.firebaseapp.com",
+      projectId: "resumebuilder-a39bb",
+      storageBucket: "resumebuilder-a39bb.appspot.com",
+      messagingSenderId: "842904588733",
+      appId: "1:842904588733:web:ded89179b09898e2a742d4"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    function signin(){
+        window.location="login.html"
+    }
+   
+
+    
+    document.getElementById("registerusers").addEventListener("click", async (e) =>{
+        const docRef=await addDoc(collection(db,"userslist"),userlist);
+
+       let name=document.getElementById("reg_name")
+       let email=document.getElementById("reg_email")
+       let password=document.getElementById("reg_password")
+       
+         if (name.value === '' || email.value === '' || password.value === '' ){
+        alert("please fill all data")
+        }
+        else{
+            
+            alert("Registered")
+        
+            window.location="login.html"
+           
+        }   
+
+    })
+        
+    getDocs(collection(db,"userslist")).then(docSnap =>{
+            let userslist=[];
+            docSnap.forEach((doc)=>{
+                userslist.push({...doc.data(),id:doc.id})
+            });
+            
+        })
+
+        // docRef.set({
+        //     id:docRef.id
+        // })
+        // console.log(docRef.id)
+
+    
+
+   
+    
+
+
+  </script>

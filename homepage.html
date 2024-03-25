@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="myresume.js" type="text/javaScript"></script>
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="main">
+        <div id="title">
+        <h1 >List of Resume</h1>
+        <div class="themeicon"><i  class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="table" >
+        <table  >
+            <thead>
+                <th>LIST OF RESUMES</th>
+                <th>DELETE</th>
+                <th>EDIT</th>
+                
+            </thead>
+        <tbody id="listtable">
+           
+        </tbody>
+    </table>
+</div>
+    </div>
+    
+
+</body>
+
+</html>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
+      authDomain: "resumebuilder-a39bb.firebaseapp.com",
+      projectId: "resumebuilder-a39bb",
+      storageBucket: "resumebuilder-a39bb.appspot.com",
+      messagingSenderId: "842904588733",
+      appId: "1:842904588733:web:ded89179b09898e2a742d4"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    getDocs(collection(db,"myresumes")).then(docSnap => {
+        let renderHTML="";
+        docSnap.forEach((each) => {
+            let eachResume=each.data();
+            renderHTML=renderHTML+`<tr class="link">
+                                <td><a  href="templatelist.html?id=${each.id}"> ${eachResume.title}</a></td>
+                                <td><a href="homepage.html?id=${each.id}"><button class="delete" type="button">Delete</button></td>
+                               
+                                <td> <a href="edit.html?id=${each.id}"><button class="edit" type="button">Edit</button></td>
+                                </tr>`
+                               
+        })
+        document.getElementById("listtable").innerHTML=renderHTML
+        let params = new URLSearchParams(document.location.search);
+        let id= params.get("id");
+        deleteDoc(doc(db, "myresumes",id))
+    })
+ //update data
+  
+//   updatedata.addEventListener('click',(e) => {
+      
+
+
+// updateDoc(doc(db, "datas","put firebase id"), {
+//    firstname: firstname,
+//         lastname: lastname,
+//         rollno:rollno,
+
+// });
+
+// });
+// getdata.addEventListener('click',(e) => {
+
+ //     var firstname=document.getElementById("firstname").value;
+//      var lastname=document.getElementById("lastname").value;
+//    var rollno=document.getElementById("rollno").value;
+
+// getDoc(doc(db, "datas","KSL2vmNUiRtUqEM7oeWs")).then(docSnap =>{
+//     if (docSnap.exists()){
+//         console.log('Document data', docSnap.data()['firstname']);
+//     }
+//     else{
+//         console.log("No such Data")
+//     }
+    
+// });  //put the (id for dataO) in firebase to the param
+// alert("datas viewed")
+// });
+
+
+
+//getdatausingquery
+// getdata.addEventListener("click",(e) => {
+
+// const q = query(collection(db,"datas"), where("rollno","==","71"));
+
+// getDocs(q).then (docSnap=> {
+//     let datas=[];
+//     docSnap.forEach((doc) => {
+//         datas.push({...doc.data(),id:doc.id})
+   
+
+// });
+//     console.log(datas);
+   
+
+// });
+
+
+
+</script>
+
+
+
+

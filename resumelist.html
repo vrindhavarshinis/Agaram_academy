@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume List</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc ,query,where } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
+      authDomain: "resumebuilder-a39bb.firebaseapp.com",
+      projectId: "resumebuilder-a39bb",
+      storageBucket: "resumebuilder-a39bb.appspot.com",
+      messagingSenderId: "842904588733",
+      appId: "1:842904588733:web:ded89179b09898e2a742d4"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+
+   
+
+getDocs(collection(db, "userslist")).then(docSnap =>{
+  let user=[];
+        docSnap.forEach((doc) => {
+        user.push({...doc.data(),id:doc.id})
+       })
+  let firebase_id=[];
+      for (let each of user){
+        firebase_id.push(each['id'])
+      }
+   
+
+      
+      let existdata=localStorage.getItem("login_credentials")
+      let parsedata=JSON.parse(existdata)
+     
+      let storedata=""
+     for (let each in firebase_id){
+
+        if (parsedata['id']==firebase_id[each]){
+           window.location="myresume.html"
+        }
+        else{
+          window.location="login.html"
+        }
+      
+       
+     }
+    
+     
+    
+})
+
+
+ 
+    
+
+     
+       
+      
+</script>
