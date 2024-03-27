@@ -2,23 +2,160 @@
     display: flex;
     margin-left: 0px;
     justify-content: space-evenly;
+
+      
+}
+
+.hidden{
+ display: flex;
+ justify-content: flex-end;
+ margin-right: 30px;
+ color: rgb(61, 3, 75);
+ font-size: large;
+}
+ h2{
+  text-align: center;
+  font-size:30px;
+  font-weight: bold;
+  color: rgb(228, 208, 246);
+  
   
 }
+.top_div{
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  justify-content: center;
+}
+.first_container{
+  width:40%;
+  height:70% ;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+button{
+  border-radius:50%;
+  outline: none;
+  border: none;
+  
+  font-size: large;
+  font-style: bold;
+  
+}
+button:hover{
+  background-color:rgb(179, 110, 206);
+  
+}
+.middle_div{
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  justify-content: center;
+  margin-top: 2%;
+}
+.socialmedia{
+  width:45%;
+  height:10% ;
+  vertical-align: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));;
+}
+.education{
+  width:91%;
+  height:60% ;
+  margin-top: 2%;
+  text-align: center;
+  border: 1px solid black;
+  padding:0 10px 30px 20px;
+  margin-left: 28px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+.project{
+  width:91%;
+  height:30% ;
+  margin-top: 2%;
+  text-align: center;
+  border: 1px solid black;
+  padding:0 10px 30px 20px;
+  margin-left: 28px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+.certification{
+  width:91%;
+  height:30% ;
+  margin-top: 2%;
+  text-align: center;
+  border: 1px solid black;
+  padding:0 10px 30px 20px;
+  margin-left: 28px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+.experience{
+  width:91%;
+  height:30% ;
+  margin-top: 2%;
+  text-align: center;
+  border: 1px solid black;
+  padding:0 10px 30px 20px;
+  margin-left: 28px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+.skills{
+  width:40%;
+  height:110px ;
+  
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+}
+.personal_details{
+  width:45%;
+  
+  border: 1px solid black;
+  padding:20px;
+  border-radius: 10px;
+  background:linear-gradient(rgb(97, 21, 118),rgb(50, 8, 60));
+}
 body{
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(200,148,233,1) 87%);
+  /* background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(200,148,233,1) 87%); */
+ background:linear-gradient(rgb(217, 176, 255),rgb(151, 86, 176));
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ 
+}
+label{
+  font-size: large;
+  font-family:'Trebuchet MS';
+  color:rgb(217, 176, 255);
+  width: 100px;
+  
  
 }
 
 
 .input_container input{
     width:200px;
-    border:1px solid black;
+    text-align: center;
     padding: 10px;
     margin-top: 10px;
     margin-left: 0px;
     text-align: left;
-    
+    border-radius: 20px;
+    border: none;
+    outline-color: rgb(179, 110, 206);
+  
+
 }
 h1{
     text-align: center;
@@ -32,12 +169,15 @@ pre{
     border:1px solid black;
     height:600px;
     overflow-y: scroll;
-    
+    background:linear-gradient(rgb(97, 21, 118),rgb(61, 3, 75));
+    border-radius: 10px;
+      color:rgb(217, 176, 255);
 
 }
 .footer{
   display: flex;
   gap:20px;
+  justify-content: center;
 }
 .submitBtn {
     width: 120px;
@@ -52,7 +192,7 @@ pre{
     font-weight: 600;
     cursor: pointer;
     color: white;
-    background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
+    background: linear-gradient(to left,rgb(230, 0, 0),rgb(255, 174, 0));
     letter-spacing: 0.7px;
   }
 .submitBtn:hover .arrow {

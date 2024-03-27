@@ -84,8 +84,6 @@ function signin(){
 
 
 
- 
-
 
 // function loginusers(){
 
@@ -109,8 +107,11 @@ function signin(){
      else{
          myresume[key]=ele.value;
      }
-     
+    
+    
  
+
+
      preview()
  }
  function preview(){

@@ -31,39 +31,34 @@
     const db = getFirestore(app);
 
 
-   
-
 getDocs(collection(db, "userslist")).then(docSnap =>{
   let user=[];
         docSnap.forEach((doc) => {
         user.push({...doc.data(),id:doc.id})
        })
-  let firebase_id=[];
-      for (let each of user){
-        firebase_id.push(each['id'])
-      }
-   
+
 
       
       let existdata=localStorage.getItem("login_credentials")
       let parsedata=JSON.parse(existdata)
      
-      let storedata=""
-     for (let each in firebase_id){
+     
+    let params = new URLSearchParams(document.location.search);
+    let firebase_id= params.get("firebaseid");
+   
+    
 
-        if (parsedata['id']==firebase_id[each]){
-           window.location="myresume.html"
+        if (parsedata['id']==firebase_id){
+           window.location=`myresume.html?firebaseid=${firebase_id}`
         }
         else{
           window.location="login.html"
         }
-      
-       
-     }
-    
      
+       }
+      
     
-})
+)
 
 
  

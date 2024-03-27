@@ -14,7 +14,7 @@ body{
    }
    .login_footer{
        display: flex;
-       justify-content: center;
+       justify-content: space-between;
        gap: 5px;
    }
 
@@ -78,7 +78,7 @@ body{
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
     --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
+    --btn-color: black;
     border: .25em solid var(--glow-color);
     padding: 1em 3em;
     color: var(--glow-color);

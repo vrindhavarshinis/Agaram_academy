@@ -346,7 +346,7 @@
 
      
        
-//getdata
+//getdata to view in edit page
 getDoc(doc(db, "myresumes",id)).then(docSnap =>{
    if (docSnap.exists()){
       
@@ -564,11 +564,12 @@ getDoc(doc(db, "myresumes",id)).then(docSnap =>{
 })
 
 
-addhobby.addEventListener('click', (event) => {
+addeducation.addEventListener('click', (event) => {
+    alert("work")
 getDoc(doc(db, "myresumes",id)).then(docSnap =>{
     let educations="";
    for (let each of ( docSnap.data()['education'])){
-   
+  
      educations = educations +
             `<tr>
              <td><input type="text"  onkeyup="update(this,${each},'course_name')" value=${each.course_name} ></td>

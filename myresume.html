@@ -10,15 +10,16 @@
     
 </head>
 <body>
-    <h1>Resume Builder</h1>
+    <h1 style="font-family: sans-serif; font-size: 40px; color:rgb(50, 8, 60)">Resume Builder</h1>
 
     <div class="main">
         <form class="register">
-            
+         <div class="top_div">
+            <div class="first_container">
             <div class="input_container">
                 <label>Image</label>
                 <td><input type="file" id="image" accept="image/*" ></td>
-                <button type="button" onclick="saveimage()">Click to Upload</button>
+                <button type="button" onclick="saveimage()">+</button>
             </div>
             <div class="input_container">
                 <label>Designation</label>
@@ -56,15 +57,14 @@
                 <input type="text"  id="objectives" placeholder="Enter Objectives" onkeyup="gen(this,'objectives')"/>
             
             </div>
-            <div class="input_container">
-                <label>Skills</label>
-                <input type="text" placeholder="Enter Your Skills" id="skill" />
-                <button type="button" onclick="addarrays('skills','skill')">click to Add another skill</button>
-            </div>
+        </div>
+            
+            <div class="personal_details">
+                <h2>Personal Details</h2>
             <div class="input_container">
                 <label>Hobbies</label>
                 <input type="text"  placeholder="Enter Your hobby"  id="hobby"/>
-                <button type="button"  onclick="gethobbies('personal_details','hobbies','hobby')">click to Add another hobby</button>
+                <button type="button"  onclick="gethobbies('personal_details','hobbies','hobby')">+</button>
             
             </div>
             <div class="input_container">
@@ -86,10 +86,32 @@
             <div class="input_container">
                 <label>Languages known</label>
                 <input type="text"  placeholder="Enter languages known " id="language"/>
-                <button type="button"  onclick="getlanguage('personal_details','languages_known','language')">click to Add another language</button>
+                <button type="button"  onclick="getlanguage('personal_details','languages_known','language')">+</button>
             
             </div>
-            
+        </div>
+        </div>
+        <div class="middle_div">
+        <div class="skills">
+        <div class="input_container">
+            <label>Skills</label>
+            <input type="text" placeholder="Enter Your Skills" id="skill" />
+            <button type="button" onclick="addarrays('skills','skill')">+</button>
+        </div>
+    </div>
+    <div class="socialmedia">
+    <div class="input_container">
+        <label>Linkedin id</label>
+        <input type="text" id="linkedin"  placeholder="Enter your linkedin id" onkeyup="gen(this,'linkedin')"/>
+    </div>
+    <br>
+    <div class="input_container">
+        <label>Git Hub User Name</label>
+        <input type="text" id="github"  placeholder="Enter your Git Hub User Name" onkeyup="gen(this,'github')"/>
+    </div>
+    </div>
+</div>
+<div class="education">
             <h2>Education</h2>
             <div class="input_container">
                 <label>UG</label>
@@ -112,7 +134,8 @@
                 <input type="number"  placeholder="Enter percentage scored" onkeyup="gen(this,'education',false,2,'percentage_scored')"/>
                 <input type="number"  placeholder="Enter year of passed out" onkeyup="gen(this,'education',false,2,'Year')"/>
             </div>
-
+        </div>
+        <div class="experience">
             <h2>Experience</h2>
             <div class="input_container">
                
@@ -126,8 +149,8 @@
                 <input type="text"  placeholder="Enter your role" onkeyup="gen(this,'experience',false,1,'role')"/>
                 <input type="number"  placeholder="Enter year of Experience" onkeyup="gen(this,'experience',false,1,'year_of_experience')"/>    
             </div>
-
-
+        </div>
+        <div class="project">
             <h2>Projects</h2>
             <div class="input_container">
                
@@ -136,12 +159,16 @@
                 <input type="number"  placeholder="Enter year" onkeyup="gen(this,'projects',false,0,'year')"/>
                
             </div>
+      
+       
             <div class="input_container">
                 <input type="text"  placeholder="Enter title" onkeyup="gen(this,'projects',false,1,'title')"/>
                 <input type="text"  placeholder="Enter your role" onkeyup="gen(this,'projects',false,1,'role')"/>
                 <input type="number"  placeholder="Enter year" onkeyup="gen(this,'projects',false,1,'year')"/>
                  
             </div>
+        </div>
+        <div class="certification">
 
             <h2>Certifications</h2>
             <div class="input_container">
@@ -156,19 +183,15 @@
                
                  
             </div>
+        </div>
             <br/>
-            <div class="input_container">
-                <label>Linkedin id</label>
-                <input type="text" id="linkedin"  placeholder="Enter your linkedin id" onkeyup="gen(this,'linkedin')"/>
-            </div>
-            <br>
-            <div class="input_container">
-                <label>Git Hub User Name</label>
-                <input type="text" id="github"  placeholder="Enter your Git Hub User Name" onkeyup="gen(this,'github')"/>
-            </div>
+            <div class="hidden">
+            <label>Userid:  </label>
+            <hidden type="hidden" id="hidden"></hidden>  
+        </div>
             <br>
             <div class="footer">
-                <button class="submitBtn" type="button"  id="saveresume">
+                <button class="submitBtn" type="button" onkeyup="gen(this,'id')" id="saveresume">
                     Submit
                 </button>
                  
@@ -184,6 +207,15 @@
     </div>
     
 </body>
+<script>
+    
+    let existdata=localStorage.getItem("login_credentials")
+    let parsedata=JSON.parse(existdata)
+    parseid=(parsedata["id"])
+
+    document.getElementById("hidden").innerHTML=  parseid
+   
+</script>
 </html>
 <script type="module">
     // Import the functions you need from the SDKs you need
@@ -206,40 +238,54 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-
+   
+    let params = new URLSearchParams(document.location.search);
+    let firebase_id= params.get("firebaseid");
+    
+    
     document.getElementById("saveresume").addEventListener("click", async (e) =>{
     const docRef=await addDoc(collection(db,"myresumes"),myresume);
-      
-     getDocs(collection(db, "userslist")).then(docSnap =>{
-  let user=[];
+   
+       
+        window.location=`homepage.html?resumeid=${docRef.id}&firebaseid=${firebase_id}`
+    
+    getDocs(collection(db, "myresumes")).then(docSnap =>{
+    let user=[];
         docSnap.forEach((doc) => {
         user.push({...doc.data(),id:doc.id})
        })
-  let firebase_id=[];
-      for (let each of user){
-        firebase_id.push(each['id'])
-      }
+   let d=[];
+   for (let each of user){
+    d.push(each["id"])
+   }
+ 
    
+}) 
 
-      
-      let existdata=localStorage.getItem("login_credentials")
-      let parsedata=JSON.parse(existdata)
-     
-      let storedata=""
-     for (let each in firebase_id){
+// getDocs(collection(db, "userslist")).then(docSnap =>{
+//     let user=[];
+//         docSnap.forEach((doc) => {
+//         user.push({...doc.data(),id:doc.id})
+//        })
+ 
+//       let existdata=localStorage.getItem("login_credentials")
+//       let parsedata=JSON.parse(existdata)
 
-        if (parsedata['id']==firebase_id[each]){
-           window.location="homepage.html"
-        }
-      
-       
-     }
+//       let params = new URLSearchParams(document.location.search);
+//       let firebase_id= params.get("firebaseid");
+
+//     if (parsedata['id']==firebase_id){
+         
+//         }
+        
     
-     
-    
-})
+// })
 
-})
+
+ })    
+
+
+  
    
   </script>
  
