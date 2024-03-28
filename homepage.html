@@ -81,10 +81,10 @@
         docSnap.forEach((each) => {
             let eachResume=each.data();
             renderHTML=renderHTML+`<tr class="link">
-                                <td><a  href="templatelist.html?id=${each.id}"> ${eachResume.title}</a></td>
+                                <td><a  href="templatelist.html?resumeid=${each.id}"> ${eachResume.title}</a></td>
                             
                                 <td><button class="delete" onclick="delete_list('${each.id}')"type="button">Delete</button></td>
-                                <td> <a href="edit.html?id=${each.id}"><button class="edit" type="button">Edit</button></td>
+                                <td> <a href="edit.html?resumeid=${each.id}"><button class="edit" type="button">Edit</button></td>
                                 </tr>`
     
                                

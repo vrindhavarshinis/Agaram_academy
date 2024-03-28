@@ -49,7 +49,7 @@ getDocs(collection(db, "userslist")).then(docSnap =>{
     
 
         if (parsedata['id']==firebase_id){
-           window.location=`myresume.html?firebaseid=${firebase_id}`
+           window.location=`myresume.html`
         }
         else{
           window.location="login.html"
