@@ -191,7 +191,7 @@
         </div>
             <br>
             <div class="footer">
-                <button class="submitBtn" type="button" onkeyup="gen(this,'id')" id="saveresume">
+                <button class="submitBtn" type="button" id="saveresume">
                     Submit
                 </button>
                  
@@ -199,10 +199,7 @@
             
         </form>
 
-        <div class="code_preview">
-            <pre id="code"></pre>
-        </div>
-
+       
         
     </div>
     
@@ -242,12 +239,18 @@
     let params = new URLSearchParams(document.location.search);
     let firebase_id= params.get("firebaseid");
     
+     
+    
+     
     
     document.getElementById("saveresume").addEventListener("click", async (e) =>{
-    const docRef=await addDoc(collection(db,"myresumes"),myresume);
+
+        let existdata=localStorage.getItem("login_credentials")
+        let parsedata=JSON.parse(existdata)
+        const docRef=await addDoc(collection(db,"myresumes"),{...myresume,userid:parsedata.id});
    
        
-        window.location=`homepage.html?resumeid=${docRef.id}&firebaseid=${firebase_id}`
+        window.location=`homepage.html`
     
     getDocs(collection(db, "myresumes")).then(docSnap =>{
     let user=[];

@@ -66,23 +66,29 @@ button {
     background:none;
     border-radius: 30px;
      background: transparent;
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(60px);
     
     
    }
    
-   .button{
+   .footer{
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
    }
    
    .button{
-    margin-top: 20%;
+    margin-top: 10%;
     text-align: center;
    }
    .heading{
        font-size: 25px;
        color:rgb(217, 176, 255);
+       background-image: url(giphy.gif);
+       background-size: cover;
+       background-position: center;
+       color: transparent;
+       background-clip: text;
+       -webkit-background-clip: text;
       }
        td{
        font-size: 25px;
@@ -104,3 +110,14 @@ button {
           background-color:white;
          
       }
+      .signin{
+        text-align: center;
+        color: black;
+        margin-top: 65px;
+       }
+       a{
+        color:white;
+       }
+       a:hover{
+        color: rgb(30, 0, 166)
+       }

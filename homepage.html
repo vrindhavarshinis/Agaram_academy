@@ -38,7 +38,7 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-    import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    import { getFirestore,collection,query, where ,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -56,18 +56,26 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    let params = new URLSearchParams(document.location.search);
-    let firebase_id= params.get("firebaseid");
-    console.log("firebaseid",firebase_id)
+    // let params = new URLSearchParams(document.location.search);
+    // let firebase_id= params.get("firebaseid");
+    // console.log("firebaseid",firebase_id)
     // alert(firebase_id)
 
-    let param = new URLSearchParams(document.location.search);
-    let resume_id= param.get("resumeid");
+   
+    let existdata=localStorage.getItem("login_credentials")
+    let parsedata=JSON.parse(existdata)
+     
+    let params = new URLSearchParams(document.location.search);
+    let firebase_id= params.get("firebaseid");
     // <td><a href="homepage.html?deleted_id=${each.id}&firebaseid=${firebase_id}"><button class="delete" type="button">Delete</button></td>
     // alert(resume_id)
 
     function getresume_list(){
-    getDocs(collection(db,"myresumes")).then(docSnap => {
+        let existdata=localStorage.getItem("login_credentials")
+    let parsedata=JSON.parse(existdata)
+    getDocs( query(collection(db,"myresumes"), where("userid", "==",parsedata.id))).then(docSnap => {
+  
+
    
         let renderHTML="";
         docSnap.forEach((each) => {

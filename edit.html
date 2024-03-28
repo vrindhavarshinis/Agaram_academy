@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Html</title>
+    <link href="edit.css" rel="stylesheet">
     <script defer src="myresume.js" type="text/javaScript"></script>
 </head>
 <body>
@@ -528,6 +529,11 @@ getDoc(doc(db, "myresumes",id)).then(docSnap =>{
    let skill=""
     for (let each of ( docSnap.data()['skills']) ){
         skill=skill + `Skill:<input type="text" class="addskill" value="${each}"/>`
+//        skill = document.createElement("INPUT");
+// skill.setAttribute("type", "text");
+// skill.setAttribute("placeholder", "Enter Skills");
+// skill.setAttribute("addskill", "addskill");
+
        
     }
      let addskill= `Skill:<input type="text" id="addskills" class="addskill" />`

@@ -41,7 +41,7 @@ body{
        background:none;
        border-radius: 30px;
         background: transparent;
-       backdrop-filter:blur(20px);
+       backdrop-filter:blur(30px);
        
        
       }
@@ -70,9 +70,10 @@ body{
        transition: 1s;
        box-shadow: 1px 1px 2px 2px solid whitesmoke ;
    }
-   .button{
-    margin-top: 20%;
-    text-align: center;
+   .login_footer{
+    margin-top: 5%;
+   display: flex;
+   justify-content: center;
    }
    button {
     --glow-color: rgb(217, 176, 255);
@@ -122,4 +123,14 @@ body{
            0 0 2.5em 2em var(--glow-spread-color),
            inset 0 0 .5em .25em var(--glow-color);
    }
-   
+   .register{
+    text-align: center;
+    color: black;
+    margin-top: 65px;
+   }
+   a{
+    color:white;
+   }
+   a:hover{
+    color: rgb(82, 255, 47)
+   }
