@@ -7,9 +7,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="myresume.js" type="text/javaScript"></script>
     <link href="login.css" rel="stylesheet">
+    <script src="resume.js" type="module"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="main">
+
+    <div class="container-fluid">
+      
+        <div class="container-lg d-flex justify-content-center" >
+            <div class="d-flex justify-content-center  "  id="container">
+
+           
+            <div class="container-xxl ">
+                <div class="heading">
+                    <h1 style="text-align: center;" >L💛gin</h1>
+               </div>
+               <table class="d-flex justify-content-center" style="padding: 20% 20%; ">
+                <tbody>
+                  
+                   
+                <div class="input">
+                     <tr><td ><label>Email: </label> </td><td><input type="email" required onkeyup="log(this, 'log_email')" id="log_email"  ></td></tr>
+                </div>
+                <div class="input">
+                    <tr><td><label>Password:</label>  </td><td><input type="password"   required   onkeyup="log(this, 'log_password')" id="log_password" ></td></tr>
+               </div>
+             
+              
+                </tbody>
+                </table>
+               
+               <div class="button">
+              
+                <div class="register" style="text-align: center;">
+                    
+                    <button role="button" onclick="submitlogin()" class="golden-button">
+                        <span class="golden-text">Login</span>
+                      </button>
+                      
+                </div>
+              <br>
+           </div>
+           <div>
+            <h2 class="signin" style="text-align: center; color: white; font-size: medium; font-weight: lighter;" >Already have an account? <a href="register.html">Create New</a> </h2>
+        </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- <div class="main">
         
         <div class="container">
             <div class="heading">
@@ -35,7 +85,7 @@
                
                 
                 <div class="button">
-                    <button type="button" id="loginusers" >Login</button>
+                    <button type="button" onclick="submitlogin()" >Login</button>
                 </div>
                 
             </div>
@@ -45,122 +95,9 @@
            >
         </div>
         </div>
-    </div>
+    </div> -->
 </body>
-<script>
-
-function registernew(){
-    window.location="register.html"
-}
-
-</script>
 
 </html>
 
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-    import { getFirestore,collection,addDoc,deleteDoc,updateDoc,getDoc,getDocs,doc ,query,where } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyD4Hsq2GiOH1YrneWOSBAazh_pMZBoNhUQ",
-      authDomain: "resumebuilder-a39bb.firebaseapp.com",
-      projectId: "resumebuilder-a39bb",
-      storageBucket: "resumebuilder-a39bb.appspot.com",
-      messagingSenderId: "842904588733",
-      appId: "1:842904588733:web:ded89179b09898e2a742d4"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-
-   
-
-getDocs(collection(db, "userslist")).then(docSnap =>{
-    let user=[];
-        docSnap.forEach((doc) => {
-        user.push({...doc.data(),id:doc.id})
-       })
-
-let datas=[];
-       for (let each of user){
-        datas.push(each)
-       }
-
-        document.getElementById("loginusers").addEventListener("click", async (e) =>{
-        const docRef=await addDoc(collection(db,"logindatas"),logindata);
-
-       let logemail=document.getElementById("log_email").value
-       let logpassword=document.getElementById("log_password").value
-
-
-       if (logpassword=== '' || logemail=== ''  ){
-            
-            window.location.reload()
-
-           alert("please fill  both Email and Password")
-        }
-        else{
-           
-            
-           let store_mail="";
-           let store_pass="";
-           let store_id="";
-           let store_name="";
-                for (let each in datas){
-               
-                    
-                    if (logemail===datas[each]["email"] && logpassword===datas[each]["password"]){
-                        store_mail=datas[each]["email"]
-                        store_pass=datas[each]["password"] 
-                        store_id=datas[each]["id"]
-                        store_name=datas[each]["name"]
-
-
-                        if (store_mail===logemail && store_pass===logpassword){
-
-                                let local_storage={"id":store_id,
-                                                "name":store_name}
-
-                                let local=JSON.stringify(local_storage)
-                                localStorage.setItem("login_credentials",local)
-                               
-                        }
-                        
-                      }
-                     
-                    
-                    }
-                            if (store_mail==logemail && store_pass==logpassword){
-
-                               
-                                 window.location=`resumelist.html?firebaseid=${store_id}`
-                            }
-                            
-                            else {
-
-
-                                alert("Your data is not valid please Check")
-                                window.location.reload()
-                            }    
-                            
-                
-                }
-                   
-                           
-                           
-
-            
-          
-        
-    });
- 
-
-})
-</script>

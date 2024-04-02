@@ -1,4 +1,4 @@
-let userlist={};
+let userlist={};  
 let logindata={};
 
 let myresume={
@@ -82,9 +82,6 @@ function signin(){
 
 
 
-
-
-
 // function loginusers(){
 
 //     if (!localStorage.getItem("loginlist")){  //to check the local storage 
@@ -112,38 +109,28 @@ function signin(){
  
 
 
-     preview()
+    
  }
- function preview(){
-     document.getElementById("code").innerHTML=JSON.stringify(myresume,null,4)
- }
+ 
  function addarrays(key,id){
      let value = document.getElementById(id).value
      myresume[key].push(value)
      document.getElementById(id).value=""
-     preview()
+  
  }
  function getlanguage(p_key,c_key,id){
      let value=document.getElementById(id).value
      myresume[p_key][c_key].push(value)
      document.getElementById(id).value=""
-     preview()
+    
  
  }
  function gethobbies(p_key,c_key,id){
     let value=document.getElementById(id).value
     myresume[p_key][c_key].push(value)
     document.getElementById(id).value=""
-    preview()
-
+  
 }
- function saveimage(){
-    var input=document.getElementById('image')
-    if (input){
-        var reader=new FileReader();
-        console.log(reader)
-    }
- }
 
  
 //  function saveresume(){
